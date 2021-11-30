@@ -6,11 +6,11 @@ import Login from "./components/Login/Login";
 import AddProducts from "./components/AddProducts/AddProducts";
 import Header from "./components/Header/Header";
 import { createContext, useState } from "react";
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+
 import CheckOut from './components/CheckOut/CheckOut';
 export const UserContext = createContext();
 
-function App() {
+function App(props) {
   const [loggedInUser,setLoggedInUser] = useState({});
  
   return (
@@ -32,10 +32,10 @@ function App() {
         <Route path="/addProducts">
           <AddProducts />
         </Route>
-        <PrivateRoute path="checkOut/:id">
+        <Route path="checkOut">
           <CheckOut />
 
-        </PrivateRoute>
+        </Route>
       </Switch>
     </Router>
     </UserContext.Provider>
