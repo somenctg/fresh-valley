@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import Products from '../Products/Products';
-import { useState } from 'react';
+
 
 const Home = () => {
     const [products,setProducts] =useState([]);
+    console.log(products)
     useEffect(()=>{
-        fetch('http://localhost:5055/products')
+        fetch('http://fierce-spire-37555.herokuapp.com/products')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },

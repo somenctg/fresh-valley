@@ -21,7 +21,7 @@ const AddProducts = () => {
       price: data.price,
       imageURL: imageURL
     }
-    const url =`http://localhost:5055/addProducts`;
+    const url =`https://fierce-spire-37555.herokuapp.com/addProducts`;
     console.log(products);
     fetch(url, {
       method: 'POST',
